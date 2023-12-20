@@ -4,6 +4,7 @@
 [![Pre-commit.ci](https://results.pre-commit.ci/badge/github/paduszyk/reactor/main.svg)][pre-commit.ci]
 
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)][poetry]
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)][ruff]
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fa6673.svg?logo=conventional-commits)][conventional-commits]
 [![License](https://img.shields.io/github/license/paduszyk/reactor)][license]
@@ -29,3 +30,4 @@ Released under the [MIT License][license].
 [license]: https://github.com/paduszyk/reactor/blob/main/LICENSE
 [poetry]: https://python-poetry.org
 [pre-commit.ci]: https://results.pre-commit.ci/latest/github/paduszyk/reactor/main
+[ruff]: https://github.com/astral-sh/ruff
