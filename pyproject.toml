@@ -1,0 +1,19 @@
+# Poetry
+# https://python-poetry.org/docs/pyproject/
+
+[tool.poetry]
+name = "reactor"
+version = "0.0.0"
+description = "👩🏻‍🔬 Research Activity Output Repository 🚀 Built on Django 🐍"
+license = "MIT"
+authors = [
+  "Kamil Paduszyński <92403542+paduszyk@users.noreply.github.com>",
+]
+readme = "docs/README.md"
+repository = "https://github.com/paduszyk/reactor"
+packages = [
+  { include = "reactor", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
