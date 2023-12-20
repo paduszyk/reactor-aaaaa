@@ -20,3 +20,9 @@ dist/
 assets/
 media/
 *.sqlite3
+
+# IPython
+.ipython/profile_default/*
+!.ipython/profile_default/ipython_config.json
+!.ipython/profile_default/startup
+.ipython/profile_default/startup/README
