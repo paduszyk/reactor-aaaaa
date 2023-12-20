@@ -1,5 +1,7 @@
 # reactor
 
+[![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)][poetry]
+
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fa6673.svg?logo=conventional-commits)][conventional-commits]
 [![License](https://img.shields.io/github/license/paduszyk/reactor)][license]
 
@@ -21,3 +23,4 @@ Released under the [MIT License][license].
 [conventional-commits]: https://conventionalcommits.org
 [github-paduszyk]: https://github.com/paduszyk
 [license]: https://github.com/paduszyk/reactor/blob/main/LICENSE
+[poetry]: https://python-poetry.org
