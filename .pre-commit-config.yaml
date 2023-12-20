@@ -36,6 +36,14 @@ repos:
   - id: poetry-check
   - id: poetry-lock
   - id: poetry-install
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: "v0.1.8"
+  hooks:
+  - id: ruff
+    args:
+    - --fix
+    - --exit-non-zero-on-fix
+  - id: ruff-format
 
 # Pre-commit.ci
 # https://pre-commit.ci/#configuration
