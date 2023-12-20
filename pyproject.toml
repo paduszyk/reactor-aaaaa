@@ -89,3 +89,57 @@ known-first-party = ["reactor"]
 
 [tool.ruff.isort.sections]
 "django" = ["django"]
+
+# Pytest
+# https://docs.pytest.org/en/latest/reference/reference.html#configuration-options
+
+[tool.pytest.ini_options]
+addopts = [
+  "-ra",
+  "--strict-markers",
+
+  # pytest-cov
+  # https://pytest-cov.readthedocs.io/en/latest/config.html#reference
+  "--cov",
+  "--cov-branch",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-report=xml",
+
+  # pytest-django
+  # https://pytest-django.readthedocs.io/en/latest/configuring_django.html
+  "--ds=reactor.conf.settings",
+  "--dc=Tests",
+
+  # pytest-custom-exit-code
+  # https://github.com/yashtodi94/pytest-custom_exit_code#usage
+  "--suppress-no-test-exit-code",
+]
+filterwarnings = [
+  "ignore::DeprecationWarning",
+  "ignore::PendingDeprecationWarning",
+]
+python_files = ["test_*.py", "tests.py"]
+pythonpath = [".", "src"]
+testpaths = ["tests"]
+
+# Coverage.py
+# https://coverage.readthedocs.io/en/latest/config.html
+
+[tool.coverage.run]
+source = ["src"]
+
+[tool.coverage.report]
+omit = [
+  "**/conf/*",
+  "**/__main__.py",
+  "**/settings.py",
+  "**/urls.py",
+]
+exclude_also = [
+  "if __name__ == ['\"]__main__['\"]",
+  "if settings.DEBUG:",
+  "raise NotImplementedError",
+]
+
+[tool.coverage.xml]
+output = "coverage.xml"
