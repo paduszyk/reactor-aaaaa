@@ -1,0 +1,35 @@
+name: Poetry
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  poetry:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        poetry-command:
+        - check
+        - lock
+        - install
+        - build
+      fail-fast: false
+    steps:
+    - name: Check out
+      uses: actions/checkout@v4.1.1
+    - name: Cache Poetry
+      id: cache-poetry
+      uses: actions/cache@v3.3.2
+      with:
+        path: ~/.local
+        key: poetry
+    - name: Install Poetry
+      if: steps.cache-poetry.outputs.cache-hit != 'true'
+      uses: snok/install-poetry@v1.3.4
+    - name: Set up Python
+      uses: actions/setup-python@v5.0.0
+    - name: Run ${{ matrix.poetry-command }} command
+      run:
+        poetry ${{ matrix.poetry-command }} --no-interaction
