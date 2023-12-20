@@ -45,3 +45,55 @@ jobs:
     - name: Apply migrations
       run:
         poetry run python manage.py migrate
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        django-database-alias:
+        - "sqlite"
+      fail-fast: false
+    env:
+      DJANGO_SETTINGS_MODULE: "reactor.conf.settings"
+      DJANGO_CONFIGURATION: "Tests"
+      DJANGO_DATABASE_ALIAS: ${{ matrix.django-database-alias }}
+    steps:
+    - name: Check out
+      uses: actions/checkout@v4.1.1
+    - name: Load cached Poetry
+      id: cached-poetry
+      uses: actions/cache@v3.3.2
+      with:
+        path: ~/.local
+        key: poetry
+    - name: Install Poetry
+      if: steps.cached-poetry.outputs.cache-hit != 'true'
+      uses: snok/install-poetry@v1.3.4
+    - name: Set up Python
+      uses: actions/setup-python@v5.0.0
+      with:
+        cache: poetry
+    - name: Install dependencies
+      run:
+        poetry install --with=test
+    - name: Run tests
+      run:
+        poetry run pytest
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4.0.0
+      with:
+        name: coverage-${{ matrix.django-database-alias }}
+        path: "./coverage.xml"
+        if-no-files-found: error
+  codecov:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out
+      uses: actions/checkout@v4.1.1
+    - name: Download artifacts
+      uses: actions/download-artifact@v4.1.0
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3.1.4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}

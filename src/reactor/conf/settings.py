@@ -194,3 +194,17 @@ class CI(Development):
     DATABASES = {
         "sqlite": db_url.parse("sqlite://:memory:"),
     }
+
+
+class Tests(Development):
+    """Defines a configuration for running tests."""
+
+    # Apps & middleware
+
+    INSTALLED_APPS = Common.INSTALLED_APPS + ["tests"]
+
+    # Databases
+
+    DATABASES = {
+        "sqlite": db_url.parse("sqlite://:memory:"),
+    }
