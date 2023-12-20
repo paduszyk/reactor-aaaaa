@@ -66,6 +66,7 @@ select = [
   "B",    # flake8-bugbear
   "A",    # flake8-builtins
   "T20",  # flake8-print
+  "PT",   # flake8-pytest-style
   "PTH",  # flake8-use-pathlib
 ]
 ignore = ["E501", "D1", "D205"]
@@ -83,12 +84,14 @@ section-order = [
   "third-party",
   "django",
   "first-party",
+  "tests",
   "local-folder",
 ]
 known-first-party = ["reactor"]
 
 [tool.ruff.isort.sections]
 "django" = ["django"]
+"tests" = ["tests"]
 
 # Pytest
 # https://docs.pytest.org/en/latest/reference/reference.html#configuration-options
