@@ -9,3 +9,6 @@ __pycache__/
 
 # Distribution / packaging
 dist/
+
+# Ruff
+.ruff_cache/
