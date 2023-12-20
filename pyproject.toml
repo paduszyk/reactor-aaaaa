@@ -16,7 +16,12 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
+dj-database-url = "^2.1.0"
+django = { version = "^5.0", allow-prereleases = true }
+django-configurations = { version = "^2.5", extras = ["database"] }
 python = "^3.11"
+python-decouple = "^3.8"
+python-dotenv = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.6.0"
