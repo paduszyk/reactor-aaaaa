@@ -15,7 +15,11 @@ packages = [
   { include = "reactor", from = "src" },
 ]
 
+[tool.poetry.scripts]
+"reactor-cli" = "reactor.cli:entry_point"
+
 [tool.poetry.dependencies]
+click = "^8.1.7"
 dj-database-url = "^2.1.0"
 django = { version = "^5.0", allow-prereleases = true }
 django-configurations = { version = "^2.5", extras = ["database"] }
