@@ -7,7 +7,9 @@ __all__ = ["urlpatterns"]
 
 # Project-level paths
 
-urlpatterns = []
+urlpatterns = [
+    path("", include("reactor.core.urls")),
+]
 
 
 # Included from apps
