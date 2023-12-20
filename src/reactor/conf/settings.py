@@ -154,11 +154,29 @@ class DebugMixin:
     ALLOWED_HOSTS = ["*"]
 
 
+class DebugToolbarMixin:
+    """Installs and sets up the Django Debug Toolbar app."""
+
+    # Security
+
+    INTERNAL_IPS = ["127.0.0.1"]
+
+    @classmethod
+    def pre_setup(cls):
+        super().pre_setup()
+
+        # Apps & middleware
+
+        cls.INSTALLED_APPS += ["debug_toolbar"]
+
+        cls.MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
+
+
 class Development(DebugMixin, Common):
     """Defines a configuration common to all development environments."""
 
 
-class Local(Development):
+class Local(DebugToolbarMixin, Development):
     """Defines a configuration for local development environments."""
 
     # Databases
