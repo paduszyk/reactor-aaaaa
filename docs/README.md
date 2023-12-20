@@ -1,5 +1,6 @@
 # reactor
 
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fa6673.svg?logo=conventional-commits)][conventional-commits]
 [![License](https://img.shields.io/github/license/paduszyk/reactor)][license]
 
 ## Summary
@@ -17,5 +18,6 @@ Created and maintained by Kamil Paduszyński ([@paduszyk][github-paduszyk]).
 
 Released under the [MIT License][license].
 
+[conventional-commits]: https://conventionalcommits.org
 [github-paduszyk]: https://github.com/paduszyk
 [license]: https://github.com/paduszyk/reactor/blob/main/LICENSE

@@ -1,0 +1,15 @@
+name: Commitlint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out
+      uses: actions/checkout@v4.1.1
+    - name: Run Commitlint
+      uses: wagoid/commitlint-github-action@v5.4.4
