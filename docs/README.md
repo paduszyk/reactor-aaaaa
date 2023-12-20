@@ -1,5 +1,7 @@
 # reactor
 
+[![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen?logo=dependabot)][dependabot]
+
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)][poetry]
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fa6673.svg?logo=conventional-commits)][conventional-commits]
@@ -21,6 +23,7 @@ Created and maintained by Kamil Paduszyński ([@paduszyk][github-paduszyk]).
 Released under the [MIT License][license].
 
 [conventional-commits]: https://conventionalcommits.org
+[dependabot]: https://github.com/paduszyk/reactor/blob/main/.github/dependabot.yaml
 [github-paduszyk]: https://github.com/paduszyk
 [license]: https://github.com/paduszyk/reactor/blob/main/LICENSE
 [poetry]: https://python-poetry.org
