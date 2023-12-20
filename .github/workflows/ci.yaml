@@ -79,3 +79,21 @@ jobs:
     - name: Run tests
       run:
         poetry run pytest
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4.0.0
+      with:
+        name: coverage-${{ matrix.django-database-alias }}
+        path: "./coverage.xml"
+        if-no-files-found: error
+  codecov:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out
+      uses: actions/checkout@v4.1.1
+    - name: Download artifacts
+      uses: actions/download-artifact@v4.1.0
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3.1.4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
