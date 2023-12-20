@@ -2,6 +2,7 @@
 
 [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen?logo=dependabot)][dependabot]
 [![Pre-commit.ci](https://results.pre-commit.ci/badge/github/paduszyk/reactor/main.svg)][pre-commit.ci]
+[![CI](https://img.shields.io/github/actions/workflow/status/paduszyk/reactor/ci.yaml?label=CI&logo=github)][ci]
 
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)][poetry]
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)][ruff]
@@ -24,6 +25,7 @@ Created and maintained by Kamil Paduszyński ([@paduszyk][github-paduszyk]).
 
 Released under the [MIT License][license].
 
+[ci]: https://github.com/paduszyk/reactor/actions/workflows/ci.yaml
 [conventional-commits]: https://conventionalcommits.org
 [dependabot]: https://github.com/paduszyk/reactor/blob/main/.github/dependabot.yaml
 [github-paduszyk]: https://github.com/paduszyk
