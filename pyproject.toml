@@ -20,3 +20,9 @@ python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.6.0"
+
+# Codespell
+# https://github.com/codespell-project/codespell
+
+[tool.codespell]
+skip = "poetry.lock,package-lock.json"
