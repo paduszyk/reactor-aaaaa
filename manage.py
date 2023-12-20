@@ -1,4 +1,6 @@
+import os
 import sys
+from pathlib import Path
 
 from decouple import config
 from dotenv import load_dotenv
@@ -17,6 +19,12 @@ def main():
     CI = config("CI", cast=bool, default=False)
     if not CI:
         load_dotenv()
+
+    # Load IPython profile if shell is requested.
+    if sys.argv[1] == "shell":
+        os.environ.setdefault(
+            "IPYTHONDIR", (Path(__file__).resolve().parent / ".ipython").as_posix()
+        )
 
     try:
         from configurations.management import execute_from_command_line
