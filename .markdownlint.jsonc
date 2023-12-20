@@ -1,0 +1,6 @@
+// Markdownlint
+// https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc
+
+{
+  "default": true
+}
