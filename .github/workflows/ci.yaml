@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        django-database-alias:
+        - "sqlite"
+      fail-fast: false
+    env:
+      DJANGO_SETTINGS_MODULE: "reactor.conf.settings"
+      DJANGO_CONFIGURATION: "CI"
+      DJANGO_DATABASE_ALIAS: ${{ matrix.django-database-alias }}
+    steps:
+    - name: Check out
+      uses: actions/checkout@v4.1.1
+    - name: Cache Poetry
+      id: cache-poetry
+      uses: actions/cache@v3.3.2
+      with:
+        path: ~/.local
+        key: poetry
+    - name: Install Poetry
+      if: steps.cache-poetry.outputs.cache-hit != 'true'
+      uses: snok/install-poetry@v1.3.4
+    - name: Set up Python
+      uses: actions/setup-python@v5.0.0
+      with:
+        cache: poetry
+    - name: Install dependencies
+      run:
+        poetry install --only=main
+    - name: Check project
+      run:
+        poetry run python manage.py check
+    - name: Check migrations
+      run:
+        poetry run python manage.py makemigrations --check --dry-run
+    - name: Apply migrations
+      run:
+        poetry run python manage.py migrate
