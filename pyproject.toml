@@ -66,7 +66,11 @@ section-order = [
   "future",
   "standard-library",
   "third-party",
+  "django",
   "first-party",
   "local-folder",
 ]
 known-first-party = ["reactor"]
+
+[tool.ruff.isort.sections]
+"django" = ["django"]
