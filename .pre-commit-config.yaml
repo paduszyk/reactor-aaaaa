@@ -36,3 +36,16 @@ repos:
   - id: poetry-check
   - id: poetry-lock
   - id: poetry-install
+
+# Pre-commit.ci
+# https://pre-commit.ci/#configuration
+
+ci:
+  autofix_commit_msg:
+    "fix: resolve issues raised by Pre-commit hooks"
+  autoupdate_commit_msg:
+    "chore(pre-commit.ci): bump hook versions"
+  skip:
+  - poetry-check
+  - poetry-lock
+  - poetry-install
