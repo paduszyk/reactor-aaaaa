@@ -23,7 +23,7 @@ click = "^8.1.7"
 dj-database-url = "^2.1.0"
 django = { version = "^5.0", allow-prereleases = true }
 django-configurations = { version = "^2.5", extras = ["database"] }
-ipython = "^8.18.1"
+ipython = "^8.19.0"
 python = "^3.11"
 python-decouple = "^3.8"
 python-dotenv = "^1.0.0"
