@@ -13,4 +13,4 @@ jobs:
     - name: Check out
       uses: actions/checkout@v4.1.1
     - name: Run Commitlint
-      uses: wagoid/commitlint-github-action@v5.4.4
+      uses: wagoid/commitlint-github-action@v5.4.5
